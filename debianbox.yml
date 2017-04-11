@@ -1,0 +1,10 @@
+---
+- name: setup debian workstation
+  hosts: local
+  connection: local
+  roles:
+    - common
+    - wm
+    - developer
+    - typesetting
+

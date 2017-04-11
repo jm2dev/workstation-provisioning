@@ -1,0 +1,9 @@
+---
+- name: openjdk platform
+  apt: pkg=openjdk-8-jdk,openjdk-8-doc,openjdk-8-source state=latest
+  register: installation
+
+- name: gradle build tool
+  apt: pkg=gradle,gradle-doc state=latest
+  register: installation
+

@@ -1,0 +1,37 @@
+---
+- name: network manager applet
+  apt: pkg=network-manager-gnome state=latest
+  register: installation
+
+- name: rxvt 256 terminal
+  apt: pkg=rxvt-unicode-256color state=latest
+  register: installation
+
+- name: i3 window manager
+  apt: pkg=i3 state=latest
+  register: installation
+
+- name: conky monitor
+  apt: pkg=conky state=latest
+  register: installation
+
+- name: rofi dmenu replacement
+  apt: pkg=rofi state=latest
+  register: installation
+
+- name: dunst notifications
+  apt: pkg=dunst state=latest
+  register: installation
+
+- name: solaar logitech unified receiver
+  apt: pkg=solaar state=latest
+  register: installation
+
+- name: redshift color temperature
+  apt: pkg=redshift,redshift-gtk state=latest
+  register: installation
+
+- name: pcmafm fast file manager
+  apt: pkg=pcmanfm state=latest
+  register: installation
+

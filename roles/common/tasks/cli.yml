@@ -1,0 +1,37 @@
+---
+- name: gnu screen terminal multiplexer
+  apt: pkg=screen state=latest
+  register: installation
+
+- name: surfraw search the web
+  apt: pkg=surfraw,surfraw-extra state=latest
+  register: installation
+
+- name: feh image viewer
+  apt: pkg=feh state=latest
+  register: installation
+
+- name: stow as dotfiles manager
+  apt: pkg=stow state=latest
+  register: installation
+
+- name: pass the unix password manager
+  apt: pkg=pass state=latest
+  register: installation
+
+- name: htop monitor
+  apt: pkg=htop state=latest
+  register: installation
+
+- name: tree utility
+  apt: pkg=tree state=latest
+  register: installation
+
+- name: task todo list utility
+  apt: pkg=task state=latest
+  register: installation
+
+- name: imagemagick image transformations
+  apt: pkg=imagemagick,imagemagick-doc state=latest
+  register: installation
+

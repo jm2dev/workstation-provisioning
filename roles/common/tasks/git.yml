@@ -1,0 +1,5 @@
+---
+- name: git version control tool
+  apt: pkg=git,git-doc state=latest
+  register: installation
+

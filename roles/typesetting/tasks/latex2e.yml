@@ -1,0 +1,5 @@
+---
+- name: LaTex2e Tex Live
+  apt: pkg=texlive,texlive-latex-base,texlive-latex-base-doc,texlive-latex-recommended,texlive-latex-recommended-doc,texlive-latex-extra,texlive-latex-extra-doc state=latest
+  register: installation
+

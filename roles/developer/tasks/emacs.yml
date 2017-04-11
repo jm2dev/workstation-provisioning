@@ -1,0 +1,5 @@
+---
+- name: emacs true editor
+  apt: pkg=emacs25 state=latest
+  register: installation
+

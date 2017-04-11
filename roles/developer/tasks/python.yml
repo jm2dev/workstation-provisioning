@@ -1,0 +1,5 @@
+---
+- name: python virtual environment wrapper
+  apt: pkg=virtualenvwrapper state=latest
+  register: installation
+

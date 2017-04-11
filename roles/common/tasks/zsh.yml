@@ -1,0 +1,5 @@
+---
+- name: z shell
+  apt: pkg=zsh,zsh-doc state=latest
+  register: installation
+

@@ -1,0 +1,9 @@
+---
+- name: mozilla fira code 
+  apt: pkg=fonts-firacode state=latest
+  register: installation
+
+- name: hack font
+  apt: pkg=fonts-hack-otf state=latest
+  register: installation
+
