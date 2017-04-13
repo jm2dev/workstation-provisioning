@@ -35,3 +35,14 @@
   apt: pkg=pcmanfm state=latest
   register: installation
 
+- name: scrot screenshot utility
+  apt: pkg=scrot state=latest
+  register: installation
+
+- name: xautolock to lock idle x sessions
+  apt: pkg=xautolock state=latest
+  register: installation
+
+- name: xbacklight utility
+  apt: pkg=xbacklight state=latest
+  register: installation
