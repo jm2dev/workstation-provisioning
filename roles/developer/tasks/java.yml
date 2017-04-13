@@ -7,3 +7,8 @@
   apt: pkg=gradle,gradle-doc state=latest
   register: installation
 
+- name: apt transport https for sbt repo
+  apt: pkg=apt-transport-https state=latest
+  register: installation
+
+
