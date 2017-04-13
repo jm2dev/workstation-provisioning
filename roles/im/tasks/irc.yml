@@ -1,0 +1,5 @@
+---
+- name: weechat
+  apt: pkg=weechat,weechat-doc state=latest
+  register: installation
+
