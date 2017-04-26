@@ -1,0 +1,6 @@
+---
+- name: openvpn
+  apt: pkg=openvpn,network-manager-openvpn,network-manager-openvpn-gnome state=latest
+  register: installation
+
+

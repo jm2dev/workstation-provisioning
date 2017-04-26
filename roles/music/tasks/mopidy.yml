@@ -1,0 +1,9 @@
+---
+- name: mopidy music server
+  apt: pkg=mopidy,mopidy-doc,mopidy-soundcloud state=latest
+  register: installation
+
+- name: ncmpcpp mopidy mpd client
+  apt: pkg=ncmpcpp state=latest
+  register: installation
+
