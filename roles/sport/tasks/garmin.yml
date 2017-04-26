@@ -1,0 +1,6 @@
+---
+- name:garmin-forerunner-tools 
+  apt: pkg=garmin-forerunner-tools state=latest
+  register: installation
+
+

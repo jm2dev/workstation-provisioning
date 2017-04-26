@@ -1,0 +1,11 @@
+---
+- name: viking gps editor
+  apt: pkg=viking state=latest
+  register: installation
+
+- name: gpsbabel
+  apt: pkg=gpsbabel, gpsbabel-gui, gpsbabel-doc state=latest
+  register: installation
+
+
+
