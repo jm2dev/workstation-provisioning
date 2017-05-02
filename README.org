@@ -1,0 +1,18 @@
+* Workstation setup
+
+Ansible playbooks to provision my debian workstation.
+
+** Requirements
+
+- python
+- ansible
+
+** Usage
+
+As root run:
+
+#+BEGIN_EXAMPLE
+ansible-playbook debianbox.yml -i hosts
+#+END_EXAMPLE
+
+
