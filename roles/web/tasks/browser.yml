@@ -1,0 +1,10 @@
+---
+- name: firefox browser extended support release
+  apt: pkg=firefox-esr state=latest
+  register: installation
+
+- name: chromium browser
+  apt: pkg=chromium state=latest
+  register: installation
+
+
