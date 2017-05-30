@@ -7,4 +7,8 @@
   apt: pkg=chromium state=latest
   register: installation
 
+- name: curl tool
+  apt: pkg=curl state=latest
+  register: installation
+
 
