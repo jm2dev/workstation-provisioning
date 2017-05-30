@@ -1,0 +1,4 @@
+---
+- name: zathura pdf viewer
+  apt: pkg=zathura,zathura-pdf-poppler state=latest
+  register: installation

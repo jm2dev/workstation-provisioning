@@ -1,3 +1,4 @@
 ---
   - include: latex2e.yml
-
+  - include: pandoc.yml
+  - include: zathura.yml
