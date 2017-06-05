@@ -1,0 +1,5 @@
+---
+- name: icdiff colorized diff tool
+  apt: pkg=icdiff state=latest
+  register: installation
+
