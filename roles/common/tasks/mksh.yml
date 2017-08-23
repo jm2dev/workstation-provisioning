@@ -1,0 +1,5 @@
+---
+- name: Mir Korn shell
+  apt: pkg=mksh state=latest
+  register: installation
+
