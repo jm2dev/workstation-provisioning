@@ -15,4 +15,8 @@ As root run:
 ansible-playbook debianbox.yml -i hosts
 #+END_EXAMPLE
 
+Those relevant for my user, so it can be run without being root:
 
+#+BEGIN_EXAMPLE
+ansible-playbook clojure-jm.yml -i hosts 
+#+END_EXAMPLE

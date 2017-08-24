@@ -1,0 +1,6 @@
+---
+- name: setup workstation for me
+  hosts: local
+  connection: local
+  roles:
+    - clojure
