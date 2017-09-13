@@ -35,3 +35,6 @@
   apt: pkg=imagemagick,imagemagick-doc state=latest
   register: installation
 
+- name: pinfo colorful info alternative
+  apt: pkg=pinfo state=latest
+  register: installation
