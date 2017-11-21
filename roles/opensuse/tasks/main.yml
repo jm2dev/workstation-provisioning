@@ -1,0 +1,4 @@
+---
+- import_tasks: cli.yml
+- import_tasks: fonts.yml
+

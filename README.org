@@ -1,11 +1,44 @@
 * Workstation setup
 
-Ansible playbooks to provision my debian workstation.
+Ansible playbooks to provision my linux workstations.
 
 ** Requirements
 
 - python
-- ansible
+
+*** Virtual environments
+
+#+BEGIN_EXAMPLE
+pip install --user virtualenvwrapper
+#+END_EXAMPLE
+
+Add the following section to your shell rc file:
+
+#+BEGIN_EXAMPLE
+// .bashrc
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/src/python
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+
+if [[ -f $HOME/.local/bin/virtualenvwrapper.sh ]]; then
+  source $HOME/.local/bin/virtualenvwrapper.sh
+fi
+#+END_EXAMPLE
+
+And expand your PATH variable:
+
+#+BEGIN_EXAMPLE
+// .profile
+export PATH=$PATH:$HOME/.local/bin
+#+END_EXAMPLE
+
+Finally create a virtual environment and install requirements:
+
+#+BEGIN_EXAMPLE
+cd .
+mkvirtualenv ansible-p3
+pip install -r requirements.txt
+#+END_EXAMPLE
 
 ** Usage
 
@@ -19,4 +52,10 @@ Those relevant for my user, so it can be run without being root:
 
 #+BEGIN_EXAMPLE
 ansible-playbook clojure-jm.yml -i hosts 
+#+END_EXAMPLE
+
+For opensuse setup I run the playbooks as normal user and prompt for password for those playbooks that require privilege escalation:
+
+#+BEGIN_EXAMPLE
+ansible-playbook opensuse-workstation.yml -i hosts -K
 #+END_EXAMPLE

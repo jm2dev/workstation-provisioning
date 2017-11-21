@@ -1,0 +1,10 @@
+---
+- name: fonts
+  zypper:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - hack-fonts
+    - powerline-fonts
+  become: true
+

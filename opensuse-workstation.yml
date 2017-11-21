@@ -1,0 +1,8 @@
+---
+- name: opensuse setup workstation for user
+  hosts: localhost
+  connection: local
+  roles:
+    - base
+    - opensuse
+ 

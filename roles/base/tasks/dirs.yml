@@ -1,0 +1,21 @@
+---
+- name: ssh directory
+  file:
+    path: "{{ home_dir }}/.ssh"
+    state: directory
+  tags:
+    - base
+
+- name: projects workspace
+  file:
+    path: "{{ workspace_dir }}/{{ item }}"
+    state: directory
+  with_items:
+    - scala
+    - python
+    - clojure
+    - orgmode
+    - github
+  tags:
+    - base
+
