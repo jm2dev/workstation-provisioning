@@ -11,6 +11,9 @@
     - htop
     - password-store
     - screen
+    - solaar
+    - solaar-cli
+    - solaar-doc
     - tree
     - zsh
     - zsh-htmldoc
