@@ -1,0 +1,18 @@
+---
+- zypper_repository:
+    repo: 'https://download.opensuse.org/repositories/shells:zsh-users:zsh-syntax-highlighting/openSUSE_Tumbleweed/shells:zsh-users:zsh-syntax-highlighting.repo'
+    state: present
+  become: true
+
+# refresh all repos
+- zypper_repository:
+    repo: '*'
+    runrefresh: yes
+  become: true
+
+- name: zsh-syntax-highlighting  
+  zypper:
+    name: zsh-syntax-highlighting
+    state: present
+  become: true
+  
