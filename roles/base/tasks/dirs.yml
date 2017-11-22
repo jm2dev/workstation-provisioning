@@ -19,3 +19,17 @@
   tags:
     - base
 
+- name: tmp directory
+  file:
+    path: "{{ temp_dir }}"
+    state: directory
+  tags:
+    - base
+
+- name: apps directory
+  file:
+    path: "{{ applications_dir }}"
+    state: directory
+  tags:
+    - base
+

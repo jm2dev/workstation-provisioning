@@ -2,4 +2,5 @@
 
 home_dir: "{{ lookup('env', 'HOME') }}"
 workspace_dir: "{{ home_dir }}/src"
-
+temp_dir: "{{ home_dir }}/tmp"
+applications_dir: "{{ home_dir }}/applications"

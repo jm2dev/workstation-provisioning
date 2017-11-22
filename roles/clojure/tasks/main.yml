@@ -2,5 +2,5 @@
 - name: download leiningen
   get_url:
     url: https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
-    dest: /home/jm/bin/lein
+    dest: "{{ home_dir }}/bin/lein"
     mode: 0511
