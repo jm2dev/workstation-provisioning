@@ -1,0 +1,7 @@
+---
+- name: un-monitor
+  template:
+    src: templates/un-monitor.j2
+    dest: "{{ home_dir }}/bin/un-monitor.sh"
+  tags:
+    - customization

@@ -1,0 +1,7 @@
+---
+- name: pruebas
+  hosts: localhost
+  connection: local
+  roles:
+    - programillas
+ 
