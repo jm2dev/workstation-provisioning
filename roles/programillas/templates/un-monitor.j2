@@ -1,3 +1,7 @@
 #!/usr/bin/env sh
 
-xrandr --output eDP-1 --brightness 0.75
+IN="eDP-1"
+EXT="DP-1"
+
+xrandr --output $IN --brightness 0.8 --auto --output $EXT --off
+feh  --bg-fill $HOME/Pictures/wallpapers/debian-lines.png

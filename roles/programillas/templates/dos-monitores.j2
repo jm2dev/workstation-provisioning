@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+IN="eDP-1"
+EXT="DP-1"
+#IN="LVDS1"
+#EXT="HDMI1"
+
+if (xrandr | grep "${EXT} disconnected"); then
+    xrandr --output $IN --brightness 0.8 --auto $EXT --off
+    feh  --bg-fill $HOME/Pictures/wallpapers/debian-lines.png
+else
+    xrandr --output $IN --brightness 0.8 --auto --output $EXT --brightness 0.8 --auto --left-of $IN
+    feh  --bg-fill $HOME/Pictures/wallpapers/debian-lines.png $HOME/Pictures/wallpapers/wallup-37748.jpg
+fi
+

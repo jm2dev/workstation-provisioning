@@ -5,3 +5,10 @@
     dest: "{{ home_dir }}/bin/un-monitor.sh"
   tags:
     - customization
+
+- name: dos-monitores
+  template:
+    src: templates/dos-monitores.j2
+    dest: "{{ home_dir }}/bin/dos-monitores.sh"
+  tags:
+    - customization
