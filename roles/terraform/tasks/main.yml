@@ -1,0 +1,16 @@
+---
+- name: download terraform
+  get_url:
+    url: https://releases.hashicorp.com/terraform/0.11.1/terraform_0.11.1_linux_amd64.zip?_ga=2.149650678.1779570060.1512477805-1415622082.1511883032
+    dest: "{{ temp_dir }"
+
+- name: extract terraform zip
+  unarchive:
+    src: "{{ temp_dir }}/terraform_0.11.1_linux_amd64.zip"
+    dest: "{{ temp_dir }}"
+
+- name: move terraform binary to path
+  copy:
+    src: "{{ temp_dir }}/terraform/terraform"
+    dest: "{{ home_dir }}/bin"
+    mode: u+rx,g+rx
