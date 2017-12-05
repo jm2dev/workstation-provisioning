@@ -1,0 +1,7 @@
+---
+- name: Go programming language
+  apt: pkg="{{ item }}" state=latest
+  register: installation
+  with_items:
+    - golang
+    - golang-doc
