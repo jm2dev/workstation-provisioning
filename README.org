@@ -1,10 +1,33 @@
-* Workstation setup
+#+title: Workstation setup with ansible
+#+startup: showall
+
+* Overview
 
 Ansible playbooks to provision my linux workstations.
 
-** Requirements
+* Requirements
 
-- python
+- python 3
+
+* Usage
+
+Create a virtual environment:
+
+#+BEGIN_EXAMPLE
+python3 -m venv .venv
+#+END_EXAMPLE
+
+and activate it:
+
+#+BEGIN_EXAMPLE
+source .venv/bin/activate
+#+END_EXAMPLE
+
+install dependencies:
+
+#+BEGIN_EXAMPLE
+pip install -r requirements.txt
+#+END_EXAMPLE
 
 *** Virtual environments
 

@@ -1,26 +1,7 @@
 ---
 - name: opensuse command line utilities
   zypper:
-    name: "{{ item }}"
+    name: ['bc', 'emacs', 'feh', 'git', 'git-doc', 'htop', 'java-11-openjdk-devel', 'java-11-openjdk-javadoc', 'java-11-openjdk-jmods', 'java-11-openjdk-src', 'password-store', 'screen', 'solaar', 'solaar-cli', 'solaar-doc', 'tree', 'tmux', 'zsh', 'zsh-htmldoc']
     state: present
-  with_items:
-    - bc
-    - emacs
-    - feh
-    - git
-    - git-doc
-    - htop
-    - i3lock
-    - java-1_8_0-openjdk-devel
-    - java-1_8_0-openjdk-javadoc
-    - java-1_8_0-openjdk-src
-    - password-store
-    - screen
-    - solaar
-    - solaar-cli
-    - solaar-doc
-    - tree
-    - zsh
-    - zsh-htmldoc
   become: true
 

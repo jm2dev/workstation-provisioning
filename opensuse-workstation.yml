@@ -5,6 +5,3 @@
   roles:
     - base
     - opensuse
-    - clojure
-    - scala
- 
