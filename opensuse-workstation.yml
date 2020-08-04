@@ -5,3 +5,5 @@
   roles:
     - base
     - opensuse
+    - aws
+    

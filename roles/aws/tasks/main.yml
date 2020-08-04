@@ -1,0 +1,21 @@
+---
+- name: install groff
+  zypper:
+    name: ['groff', 'groff-doc', 'groff-full']
+    state: present
+  become: true
+
+- name: download aws-cli-v2 zip file
+  get_url:
+    url: "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip"
+    dest: "{{ temp_dir }}/awscliv2.zip"
+    checksum: sha256:b8248b059194b1644afcae8bc8639faa456b34490a6fd05034f25d33f047ba09
+
+- name: unzip aws-cli-v2 to ~/tmp
+  unarchive:
+    src: "{{ temp_dir }}/awscliv2.zip"
+    dest: "{{ temp_dir }}"
+
+# lo dejo como documentación, sólo quiero ejecutarlo una vez, para el resto es update
+#- name: install aws-cli-v2 for user
+#  commad: "{{ temp_dir }}/aws/install -i {{ applications_dir}}/aws-cli -b {{ home_dir }}/bin"
