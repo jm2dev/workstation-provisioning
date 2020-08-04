@@ -11,12 +11,15 @@
     path: "{{ workspace_dir }}/{{ item }}"
     state: directory
   with_items:
-    - scala
-    - python
     - clojure
-    - orgmode
     - github
     - golang
+    - java
+    - nodejs
+    - orgmode
+    - python
+    - scala
+    - terraform
   tags:
     - base
 
