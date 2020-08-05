@@ -1,4 +1,7 @@
 ---
-- name: zathura pdf viewer
-  apt: pkg=zathura,zathura-pdf-poppler state=latest
-  register: installation
+- name: install zathura pdf viewer
+  zypper:
+    name: ['zathura', 'zathura-plugin-pdf-mupdf']
+    state: present
+  become: true
+
