@@ -1,0 +1,7 @@
+---
+- name: install openSUSEway and wl-clipboard
+  zypper:
+    name: ['openSUSEway', 'wl-clipboard', 'wl-clipboard-bash-completion', 'wl-clipboard-zsh-completion']
+    state: present
+  become: true
+

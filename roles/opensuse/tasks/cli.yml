@@ -1,7 +1,7 @@
 ---
 - name: opensuse command line utilities
   zypper:
-    name: ['bc', 'emacs', 'feh', 'htop', 'password-store', 'screen', 'solaar', 'solaar-cli', 'solaar-doc', 'tree', 'tmux', 'zsh', 'zsh-htmldoc']
+    name: ['bc', 'emacs', 'feh', 'htop', 'password-store', 'screen', 'solaar', 'solaar-cli', 'solaar-doc', 'surfraw', 'tree', 'tmux', 'zsh', 'zsh-htmldoc']
     state: present
   become: true
 

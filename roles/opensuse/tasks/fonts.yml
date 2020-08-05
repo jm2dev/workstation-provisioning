@@ -1,10 +1,21 @@
 ---
-- name: fonts
-  zypper:
-    name: "{{ item }}"
+- name: add fonts repository
+  zypper_repository:
+    name: M17N:fonts
+    repo: 'http://download.opensuse.org/repositories/M17N:/fonts/openSUSE_Tumbleweed'
     state: present
-  with_items:
-    - hack-fonts
-    - powerline-fonts
+    auto_import_keys: yes
+  become: true
+  
+- name: install fonts
+  zypper:
+    name: ['meslo-lg-fonts', 'ibm-plex-mono-fonts', 'ibm-plex-serif-fonts', 'ibm-plex-sans-fonts', 'iosevka-fonts']
+    state: present
+  become: true
+  
+- name: delete fonts
+  zypper:
+    name: ['google-anonymouspro-fonts', 'google-inconsolata-fonts']
+    state: absent
   become: true
 
