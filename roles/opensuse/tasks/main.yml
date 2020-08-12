@@ -3,5 +3,6 @@
 - import_tasks: dev.yml
 - import_tasks: swaywm.yml
 - import_tasks: fonts.yml
+- import_tasks: spectrwm.yml
 
 

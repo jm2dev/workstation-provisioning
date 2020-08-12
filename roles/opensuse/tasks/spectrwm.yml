@@ -1,0 +1,6 @@
+---
+- name: install spectrwm (repo X11:windowmanagers manually added)
+  zypper:
+    name: ['spectrwm']
+    state: present
+  become: true
