@@ -7,6 +7,8 @@ setup: 	## python virtual environment
 	pip install --upgrade pip;\
 	pip install -r requirements.txt
 
+playbook=archlinux-workstation.yml
+
 run: 	## run main playbook
 	VIRTUAL_ENV_DISABLE_PROMPT=true source .venv/bin/activate;\
-	env ANSIBLE_FORCE_COLOR=true ansible-playbook -i hosts opensuse-workstation.yml -K
+	env ANSIBLE_FORCE_COLOR=true ansible-playbook -i hosts $(playbook) -K

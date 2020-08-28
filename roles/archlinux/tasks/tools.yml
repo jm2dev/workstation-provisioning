@@ -1,38 +1,32 @@
 ---
 - name: install code versioning tools
   pacman:
-    name: ['colordiff', 'git', 'chezmoi', 'tmux', 'vim', 'alsa-utils']
+    name: ['colordiff', 'git', 'chezmoi', 'tmux', 'vim', 'alsa-utils', 'bat', 'exa']
     state: present
   become: true
 
-- name: create git config directory
+- name: create git and bat config directories
   file:
-    path: "{{ home_dir }}/.config/git"
+    path: "{{ home_dir }}/.config/{{ item }}"
     state: directory
+  loop:
+    - git
+    - bat
 
-- name: create git config file
+- name: create config files for git, vim, tmux
   copy:
-    src: files/git_config
-    dest: "{{ home_dir }}/.config/git/config"
+    src: "files/{{ item.origin }}"
+    dest: "{{ home_dir }}/{{ item.destiny }}"
     owner: "{{ usuario }}"
     group: "{{ grupo }}"
-
-- name: create vi config file
-  copy:
-    src: files/vimrc
-    dest: "{{ home_dir }}/.vimrc"
-    owner: "{{ usuario }}"
-    group: "{{ grupo }}"
+  loop:
+    - { origin: git_config, destiny: .config/git/config }
+    - { origin: vimrc, destiny: .vimrc }
+    - { origin: tmux.conf, destiny: .tmux.conf }
+    - { origin: bat_config, destiny: .config/bat/config }
 
 - name: clone tpm tmux plugins
   git:
     repo: https://github.com/tmux-plugins/tpm 
-    dest: "{{ home_dir }}/tmux/plugins/tpm"
+    dest: "{{ home_dir }}/.tmux/plugins/tpm"
     clone: yes
-
-- name: create tmux config file
-  copy:
-    src: files/tmux.conf
-    dest: "{{ home_dir }}/.tmux.conf"
-    owner: "{{ usuario }}"
-    group: "{{ grupo }}"

@@ -5,3 +5,4 @@
   - include: fonts.yml
   - include: x11.yml
   - include: bluetooth.yml
+  - include: pass.yml

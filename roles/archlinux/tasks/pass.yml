@@ -1,6 +1,21 @@
 ---
-- name: install pass, openssh
+- name: install pass, openssh, openvpn
   pacman:
-    name: ['pass', 'openssh']
+    name: ['pass', 'openssh', 'openvpn']
     state: present
   become: true
+
+- name: set up user systemd unit for ssh-agent
+  copy:
+    src: "files/{{ item.origin }}"
+    dest: "{{ home_dir  }}/{{ item.destiny }}"
+    mode: 0600
+  loop:
+    - { origin: ssh-agent.service, destiny: .config/systemd/user/ssh-agent.service }
+    - { origin: pam_environment, destiny: .pam_environment }
+
+- name: enable ssh-agent user service
+  systemd:
+    name: ssh-agent
+    enabled: yes
+    scope: user
