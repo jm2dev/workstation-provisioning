@@ -1,0 +1,34 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=1000
+HISTCONTROL=ignoreboth
+setopt appendhistory autocd
+unsetopt beep
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/jm/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+# https://github.com/agkozak/agkozak-zsh-prompt
+AGKOZAK_BLANK_LINES=1
+#AGKOZAK_PROMPT_CHAR=( λ %# : )
+source ~/src/github/agkozak-zsh-prompt/agkozak-zsh-prompt.plugin.zsh
+
+
+# alias
+alias et='emacsclient -t'
+alias ec='emacsclient -c'
+alias vpn_es='systemctl status openvpn-nordvpnES.service'
+alias vpn_uk='systemctl status openvpn-nordvpnUK.service'
+alias eltiempo='curl -H "Accept-Language: fr" wttr.in'
+
+#eval "$(direnv hook zsh)"
+
+# https://github.com/zsh-users/zsh-syntax-highlighting
+# it must be at the end
+source ~/src/github/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

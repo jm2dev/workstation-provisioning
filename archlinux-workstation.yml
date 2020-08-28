@@ -1,0 +1,8 @@
+---
+- name: archlinux setup workstation for user
+  hosts: localhost
+  connection: local
+  roles:
+    - base
+    - archlinux
+    - emacs

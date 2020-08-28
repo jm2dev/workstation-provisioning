@@ -1,0 +1,18 @@
+---
+- name: install bluetooth utils
+  pacman:
+    name: ['bluez' , 'bluez-utils']
+    state: present
+  become: true
+
+- name: start bluetooth service
+  systemd:
+    name: bluetooth
+    enabled: yes
+  become: true
+
+- name: auto power-on after boot
+  copy:
+    src: files/bluetooth_main.conf
+    dest: /etc/bluetooth/main.conf
+  become: true

@@ -1,0 +1,68 @@
+---
+- name: install spectrwm and terminal
+  pacman:
+    name: ['spectrwm', 'alacritty', 'xorg', 'xf86-video-intel', 'xterm', 'xlockmore', 'xbindkeys', 'feh', 'light']
+    state: present
+  become: true
+
+- name: create alacritty config directory
+  file:
+    path: "{{ home_dir }}/.config/alacritty"
+    state: directory
+
+- name: copy alacritty config
+  copy:
+    src: files/alacritty.yml
+    dest: "{{ home_dir }}/.config/alacritty/alacritty.yml"
+    owner: "{{ usuario }}"
+    group: "{{ grupo }}"
+
+- name: copy spectrwm config
+  copy:
+    src: files/spectrwm.conf
+    dest: "{{ home_dir }}/.spectrwm.conf"
+    owner: "{{ usuario }}"
+    group: "{{ grupo }}"
+
+- name: copy spectrwm bar action
+  copy:
+    src: files/baraction.sh
+    dest: "{{ home_dir }}/bin/baraction.sh"
+    owner: "{{ usuario }}"
+    group: "{{ grupo }}"
+    mode: '0700'
+
+- name: install xdm archlinux version
+  pacman:
+    name: xdm-archlinux
+    state: present
+  become: true
+
+- name: enable xdm archlinux service
+  systemd:
+    name: xdm-archlinux
+    enabled: yes
+  become: true
+
+- name: create .xsession file
+  copy:
+    src: files/xsession
+    dest: "{{ home_dir }}/.xsession"
+    owner: "{{ usuario }}"
+    group: "{{ grupo }}"
+    mode: '0700'
+
+- name: copy dos monitores script
+  copy:
+    src: files/dos-monitores.sh
+    dest: "{{ home_dir }}/bin/dos-monitores.sh"
+    owner: "{{ usuario }}"
+    group: "{{ grupo }}"
+    mode: '0700'
+
+# setxkbmap -layout us -variant intl -option ctrl:swapcaps
+- name: set us intl keyboard for X11
+  copy:
+    src: files/10-keyboard.conf
+    dest: /etc/X11/xorg.conf.d/10-keyboard.conf
+  become: true

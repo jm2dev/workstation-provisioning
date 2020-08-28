@@ -1,0 +1,6 @@
+---
+- name: install pass, openssh
+  pacman:
+    name: ['pass', 'openssh']
+    state: present
+  become: true

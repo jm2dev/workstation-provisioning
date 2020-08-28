@@ -1,0 +1,9 @@
+---
+- name: create jm user
+  user:
+    name: jm
+    comment: José Miguel Martínez Carrasco
+    groups: jm,wheel
+    shell: /usr/bin/zsh
+  become: true
+

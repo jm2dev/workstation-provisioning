@@ -1,0 +1,14 @@
+---
+- name: install doom emacs edition
+  pacman:
+    name: ['emacs', 'fd', 'ripgrep']
+    state: present
+  become: true
+
+- name: clone doom repo
+  git:
+    repo: https://github.com/hlissner/doom-emacs
+    dest: "{{ home_dir }}/.emacs.d"
+
+- name: manually run installation
+  command: echo "~/.emacs.d/bin/doom install"
