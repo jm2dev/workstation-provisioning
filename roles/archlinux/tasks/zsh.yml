@@ -1,0 +1,29 @@
+---
+- name: install zsh shell
+  pacman:
+    name: ['zsh']
+    state: present
+  become: true
+
+- name: create zsh config files
+  copy:
+    src: "files/{{ item.origin }}"
+    dest: "{{ home_dir }}/{{ item.destiny }}"
+    owner: "{{ usuario }}"
+    group: "{{ grupo }}"
+  loop:
+    - { origin: zshrc, destiny: .zshrc }
+    - { origin: zshenv, destiny: .zshenv }
+
+- name: clone zsh prompt
+  git:
+    repo: https://github.com/agkozak/agkozak-zsh-prompt.git
+    dest: "{{ home_dir }}/src/github/agkozak-zsh-prompt"
+    clone: yes
+
+- name: clone zsh syntax highlighting
+  git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: "{{ home_dir }}/src/github/zsh-syntax-highlighting"
+    clone: yes
+

@@ -1,0 +1,7 @@
+---
+  - include: tools.yml  
+  - include: zsh.yml  
+  - include: users.yml
+  - include: fonts.yml
+  - include: x11.yml
+  - include: bluetooth.yml

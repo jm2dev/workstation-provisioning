@@ -1,5 +1,8 @@
 ---
-- name: pandoc documents converter
-  apt: pkg=pandoc state=latest
-  register: installation
+- name: install pandoc documents converter
+  zypper:
+    name: ['pandoc']
+    state: present
+  become: true
+
 

@@ -1,0 +1,6 @@
+---
+- name: install fonts
+  pacman:
+    name: ['ttf-hack', 'ttf-anonymous-pro', 'ttf-cascadia-code', 'ttf-ibm-plex', 'ttf-inconsolata']
+    state: present
+  become: true
