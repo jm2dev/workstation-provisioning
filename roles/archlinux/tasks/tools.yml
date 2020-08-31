@@ -1,7 +1,7 @@
 ---
 - name: install code versioning tools
   pacman:
-    name: ['colordiff', 'git', 'chezmoi', 'tmux', 'vim', 'alsa-utils', 'bat', 'exa', 'unzip', 'firefox', 'chromium']
+    name: ['colordiff', 'git', 'chezmoi', 'tmux', 'vim', 'alsa-utils', 'bat', 'exa', 'unzip', 'firefox', 'chromium', 'jq']
     state: present
   become: true
 
