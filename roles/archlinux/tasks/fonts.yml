@@ -4,3 +4,9 @@
     name: ['ttf-hack', 'ttf-anonymous-pro', 'ttf-cascadia-code', 'ttf-ibm-plex', 'ttf-inconsolata']
     state: present
   become: true
+
+- name: install pandoc
+  pacman:
+    name: ['pandoc', 'pandoc-citeproc', 'pandoc-crossref']
+    state: present
+  become: true

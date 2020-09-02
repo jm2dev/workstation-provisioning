@@ -1,0 +1,6 @@
+---
+- name: install audio tools
+  pacman:
+    name: ['pulseaudio-jack', 'pulsemixer', 'pavucontrol']
+    state: present
+  become: true
